@@ -1,0 +1,37 @@
+// Cross browser declaration
+@mixin cross-browser($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
+
+// Set behaviour below breakpoint
+@mixin breakpoint-max($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Set behaviour above breakpoint
+@mixin breakpoint-min($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+// Set behaviour between breakpoints
+@mixin breakpoint-between($breakpoint-upper, $breakpoint-lower) {
+    @media (min-width: $breakpoint-lower) and (max-width: $breakpoint-upper) {
+        @content;
+    }
+}
+
+// Constrain container width and align to center of page
+@mixin constrainWidth($width) {
+    max-width: $width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $s2;
+    padding-left: $s2;
+}

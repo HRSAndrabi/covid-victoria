@@ -1,0 +1,49 @@
+@import "./_variables";
+@import "./_mixins";
+
+// Replaces standard box model with one where width/height are the actual
+// visable width/height. Padding & border cut into the box.
+html {
+    box-sizing: border-box;
+    @include cross-browser("font-smoothing", antialiased);
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+
+    background-color: $default-background;
+    font: 400 16px/1.5rem $sans-serif-stack;
+    color: $ct-primary;
+
+    text-size-adjust: none;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    min-height: 100vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.hide {
+    display: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $sans-serif-stack;
+    color: $cp-darkgrey;
+    font-weight: 600;
+}

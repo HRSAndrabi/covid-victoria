@@ -1,0 +1,35 @@
+// FONTS
+$sans-serif-stack: ("Open Sans", sans-serif);
+$serif-stack: ("Libre Baskerville", serif);
+$monospace-stack: ("Source Code Pro", monospace);
+$heading-stack: ("Poppins", sans-serif);
+
+// COLOURS
+$ct-primary: #202124;
+$ct-secondary: #5f6368;
+$ct-inverted: #ffffff;
+$cp-blue: #2d70ec;
+$cp-soft-blue: #f2f6f9;
+$ch-blue: #e8f0fe;
+$cp-navy: #031248;
+$cp-grey: #eceff1;
+$cp-darkgrey: #424242;
+$cp-amber: #ffa000;
+$default-background: #fff;
+
+// SPACING
+$s1: 0.35rem;
+$s2: #{$s1 * 2};
+$s3: #{$s1 * 3};
+$s4: #{$s1 * 4};
+$s5: #{$s1 * 5};
+$s6: #{$s1 * 6};
+$s7: #{$s1 * 7};
+$s8: #{$s1 * 8};
+
+// LAYOUT
+$max-page-width: 1000px;
+$sm: 400px;
+$md: 600px;
+$lg: 800px;
+$xl: 1000px;
