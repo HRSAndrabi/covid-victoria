@@ -1,0 +1,1365 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Hume",
+                "confirmed_cases": "16923",
+                "active_cases": "1050",
+                "new_cases": "61",
+                "rate": 0,
+                "population": 233471,
+                "last_updated": "2021-01-01",
+                "area_km2": 503.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.82462486482086, -37.589167518978925]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Wyndham",
+                "confirmed_cases": "11091",
+                "active_cases": "846",
+                "new_cases": "94",
+                "rate": 0,
+                "population": 270487,
+                "last_updated": "2021-01-01",
+                "area_km2": 542.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.61824925724594, -37.88665859994612]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Casey",
+                "confirmed_cases": "11074",
+                "active_cases": "936",
+                "new_cases": "92",
+                "rate": 0,
+                "population": 353872,
+                "last_updated": "2021-01-01",
+                "area_km2": 409.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.30929873561266, -38.100280380742184]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Whittlesea",
+                "confirmed_cases": "9599",
+                "active_cases": "808",
+                "new_cases": "70",
+                "rate": 0,
+                "population": 230238,
+                "last_updated": "2021-01-01",
+                "area_km2": 489.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.0776824523898, -37.54719895769411]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Brimbank",
+                "confirmed_cases": "9546",
+                "active_cases": "834",
+                "new_cases": "70",
+                "rate": 0,
+                "population": 209523,
+                "last_updated": "2021-01-01",
+                "area_km2": 123.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.80331452565386, -37.74755434486414]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Melton",
+                "confirmed_cases": "8478",
+                "active_cases": "693",
+                "new_cases": "52",
+                "rate": 0,
+                "population": 164895,
+                "last_updated": "2021-01-01",
+                "area_km2": 527.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.62602418429734, -37.69295765600018]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Moreland",
+                "confirmed_cases": "7195",
+                "active_cases": "714",
+                "new_cases": "64",
+                "rate": 0,
+                "population": 185767,
+                "last_updated": "2021-01-01",
+                "area_km2": 51
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.9488138808444, -37.729845421426894]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Greater Dandenong",
+                "confirmed_cases": "6548",
+                "active_cases": "546",
+                "new_cases": "45",
+                "rate": 0,
+                "population": 168201,
+                "last_updated": "2021-01-01",
+                "area_km2": 129.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.1900119338524, -38.00565130989552]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Darebin",
+                "confirmed_cases": "4258",
+                "active_cases": "469",
+                "new_cases": "51",
+                "rate": 0,
+                "population": 164184,
+                "last_updated": "2021-01-01",
+                "area_km2": 53.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.01433610069273, -37.73346198925955]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Melbourne",
+                "confirmed_cases": "4135",
+                "active_cases": "581",
+                "new_cases": "83",
+                "rate": 0,
+                "population": 178955,
+                "last_updated": "2021-01-01",
+                "area_km2": 37.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.94367087245368, -37.81071454646296]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Moonee Valley",
+                "confirmed_cases": "3937",
+                "active_cases": "482",
+                "new_cases": "42",
+                "rate": 0,
+                "population": 130294,
+                "last_updated": "2021-01-01",
+                "area_km2": 43.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.89574910319254, -37.74952158851084]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Glen Eira",
+                "confirmed_cases": "3298",
+                "active_cases": "580",
+                "new_cases": "53",
+                "rate": 0,
+                "population": 156511,
+                "last_updated": "2021-01-01",
+                "area_km2": 38.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.04260270996542, -37.901205876238265]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Hobsons Bay",
+                "confirmed_cases": "3044",
+                "active_cases": "279",
+                "new_cases": "15",
+                "rate": 0,
+                "population": 97751,
+                "last_updated": "2021-01-01",
+                "area_km2": 64.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.83002631138922, -37.8546890641181]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Kingston",
+                "confirmed_cases": "3060",
+                "active_cases": "417",
+                "new_cases": "50",
+                "rate": 0,
+                "population": 165782,
+                "last_updated": "2021-01-01",
+                "area_km2": 91.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.10510276423375, -37.988669326238224]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Port Phillip",
+                "confirmed_cases": "3060",
+                "active_cases": "512",
+                "new_cases": "54",
+                "rate": 0,
+                "population": 115601,
+                "last_updated": "2021-01-01",
+                "area_km2": 20.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.9660383582063, -37.85220035716027]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Monash",
+                "confirmed_cases": "2926",
+                "active_cases": "408",
+                "new_cases": "49",
+                "rate": 0,
+                "population": 202847,
+                "last_updated": "2021-01-01",
+                "area_km2": 81.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.14403367688382, -37.89714304214255]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Maribyrnong",
+                "confirmed_cases": "2738",
+                "active_cases": "353",
+                "new_cases": "34",
+                "rate": 0,
+                "population": 93448,
+                "last_updated": "2021-01-01",
+                "area_km2": 31.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.87776936511509, -37.79527966838285]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Greater Geelong",
+                "confirmed_cases": "2697",
+                "active_cases": "380",
+                "new_cases": "42",
+                "rate": 0,
+                "population": 258934,
+                "last_updated": "2021-01-01",
+                "area_km2": 1248
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.42289416015532, -38.07232043897372]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Frankston",
+                "confirmed_cases": "2682",
+                "active_cases": "298",
+                "new_cases": "29",
+                "rate": 0,
+                "population": 142643,
+                "last_updated": "2021-01-01",
+                "area_km2": 129.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.1737366635034, -38.134664248951594]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Cardinia",
+                "confirmed_cases": "2638",
+                "active_cases": "307",
+                "new_cases": "19",
+                "rate": 0,
+                "population": 112159,
+                "last_updated": "2021-01-01",
+                "area_km2": 1282.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.57266501698544, -38.08305304795247]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Mornington Peninsula",
+                "confirmed_cases": "2579",
+                "active_cases": "398",
+                "new_cases": "27",
+                "rate": 0,
+                "population": 167636,
+                "last_updated": "2021-01-01",
+                "area_km2": 724.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.0355094326463, -38.34194704424412]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Banyule",
+                "confirmed_cases": "2472",
+                "active_cases": "363",
+                "new_cases": "32",
+                "rate": 0,
+                "population": 131631,
+                "last_updated": "2021-01-01",
+                "area_km2": 62.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.08513745676916, -37.73037084082312]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Yarra",
+                "confirmed_cases": "2525",
+                "active_cases": "463",
+                "new_cases": "42",
+                "rate": 0,
+                "population": 101495,
+                "last_updated": "2021-01-01",
+                "area_km2": 19.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.99852706481877, -37.802268061408945]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Stonnington",
+                "confirmed_cases": "2288",
+                "active_cases": "514",
+                "new_cases": "56",
+                "rate": 0,
+                "population": 117768,
+                "last_updated": "2021-01-01",
+                "area_km2": 25.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.03363864067805, -37.85795059419824]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Boroondara",
+                "confirmed_cases": "2142",
+                "active_cases": "440",
+                "new_cases": "49",
+                "rate": 0,
+                "population": 183199,
+                "last_updated": "2021-01-01",
+                "area_km2": 60.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.0630933519175, -37.819292999541]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Knox",
+                "confirmed_cases": "1951",
+                "active_cases": "253",
+                "new_cases": "28",
+                "rate": 0,
+                "population": 164538,
+                "last_updated": "2021-01-01",
+                "area_km2": 113.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.25865745426728, -37.88896083357653]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Manningham",
+                "confirmed_cases": "1931",
+                "active_cases": "272",
+                "new_cases": "20",
+                "rate": 0,
+                "population": 127573,
+                "last_updated": "2021-01-01",
+                "area_km2": 113.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.1885678960027, -37.76158520614524]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Bayside",
+                "confirmed_cases": "1956",
+                "active_cases": "361",
+                "new_cases": "34",
+                "rate": 0,
+                "population": 106862,
+                "last_updated": "2021-01-01",
+                "area_km2": 37.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.01797084561971, -37.94168038210734]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Yarra Ranges",
+                "confirmed_cases": "1895",
+                "active_cases": "303",
+                "new_cases": "22",
+                "rate": 0,
+                "population": 159462,
+                "last_updated": "2021-01-01",
+                "area_km2": 2468.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.6969492615531, -37.714256207967544]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Greater Shepparton",
+                "confirmed_cases": "1658",
+                "active_cases": "97",
+                "new_cases": "5",
+                "rate": 0,
+                "population": 66498,
+                "last_updated": "2021-01-01",
+                "area_km2": 2421.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.38619153325197, -36.39700827972099]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Latrobe",
+                "confirmed_cases": "1457",
+                "active_cases": "79",
+                "new_cases": "3",
+                "rate": 0,
+                "population": 75561,
+                "last_updated": "2021-01-01",
+                "area_km2": 1425.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.43813453719264, -38.274554772623006]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Whitehorse",
+                "confirmed_cases": "1419",
+                "active_cases": "247",
+                "new_cases": "30",
+                "rate": 0,
+                "population": 178739,
+                "last_updated": "2021-01-01",
+                "area_km2": 64.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.1550568018552, -37.830248015610366]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Maroondah",
+                "confirmed_cases": "1332",
+                "active_cases": "182",
+                "new_cases": "17",
+                "rate": 0,
+                "population": 118558,
+                "last_updated": "2021-01-01",
+                "area_km2": 61.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.26525989754603, -37.80486733918201]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Baw Baw",
+                "confirmed_cases": "1113",
+                "active_cases": "141",
+                "new_cases": "6",
+                "rate": 0,
+                "population": 53396,
+                "last_updated": "2021-01-01",
+                "area_km2": 4027.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.13145410851126, -37.98400604246717]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Greater Bendigo",
+                "confirmed_cases": "1035",
+                "active_cases": "87",
+                "new_cases": "7",
+                "rate": 0,
+                "population": 118093,
+                "last_updated": "2021-01-01",
+                "area_km2": 3000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.42264069284437, -36.73444204813356]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Nillumbik",
+                "confirmed_cases": "970",
+                "active_cases": "112",
+                "new_cases": "9",
+                "rate": 0,
+                "population": 65094,
+                "last_updated": "2021-01-01",
+                "area_km2": 432.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.23685941280746, -37.62289776552175]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Mitchell",
+                "confirmed_cases": "898",
+                "active_cases": "146",
+                "new_cases": "10",
+                "rate": 0,
+                "population": 46082,
+                "last_updated": "2021-01-01",
+                "area_km2": 2862.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.00156750627372, -37.13752346060426]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Mildura",
+                "confirmed_cases": "713",
+                "active_cases": "122",
+                "new_cases": "6",
+                "rate": 0,
+                "population": 55777,
+                "last_updated": "2021-01-01",
+                "area_km2": 22082.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [141.68291694249552, -34.869242640458246]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Moorabool",
+                "confirmed_cases": "583",
+                "active_cases": "77",
+                "new_cases": "2",
+                "rate": 0,
+                "population": 35049,
+                "last_updated": "2021-01-01",
+                "area_km2": 2110.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.21570700871072, -37.63275800251707]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Wodonga",
+                "confirmed_cases": "563",
+                "active_cases": "19",
+                "new_cases": "4",
+                "rate": 0,
+                "population": 42083,
+                "last_updated": "2021-01-01",
+                "area_km2": 432.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.88298798679514, -36.150493621261646]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Macedon Ranges",
+                "confirmed_cases": "534",
+                "active_cases": "55",
+                "new_cases": "8",
+                "rate": 0,
+                "population": 50231,
+                "last_updated": "2021-01-01",
+                "area_km2": 1748.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.61663784259034, -37.33568378471178]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Ballarat",
+                "confirmed_cases": "476",
+                "active_cases": "78",
+                "new_cases": "2",
+                "rate": 0,
+                "population": 109505,
+                "last_updated": "2021-01-01",
+                "area_km2": 739
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.78150753146448, -37.492909532134995]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "East Gippsland",
+                "confirmed_cases": "381",
+                "active_cases": "16",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 47316,
+                "last_updated": "2021-01-01",
+                "area_km2": 20940.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [148.29166830633073, -37.37801776913931]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Campaspe",
+                "confirmed_cases": "334",
+                "active_cases": "77",
+                "new_cases": "5",
+                "rate": 0,
+                "population": 37622,
+                "last_updated": "2021-01-01",
+                "area_km2": 4518.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.71642661107765, -36.34523580732813]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Surf Coast",
+                "confirmed_cases": "319",
+                "active_cases": "88",
+                "new_cases": "10",
+                "rate": 0,
+                "population": 33456,
+                "last_updated": "2021-01-01",
+                "area_km2": 1552.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.05309398812506, -38.312468641036844]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Bass Coast",
+                "confirmed_cases": "283",
+                "active_cases": "49",
+                "new_cases": "8",
+                "rate": 0,
+                "population": 36320,
+                "last_updated": "2021-01-01",
+                "area_km2": 865.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.383656, -38.527743]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Moira",
+                "confirmed_cases": "237",
+                "active_cases": "20",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 29925,
+                "last_updated": "2021-01-01",
+                "area_km2": 4046.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.5503593948693, -36.06188209920679]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Colac-Otway",
+                "confirmed_cases": "231",
+                "active_cases": "11",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 21564,
+                "last_updated": "2021-01-01",
+                "area_km2": 3437.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.5950741935683, -38.45194901104469]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Wellington",
+                "confirmed_cases": "222",
+                "active_cases": "31",
+                "new_cases": "7",
+                "rate": 0,
+                "population": 44380,
+                "last_updated": "2021-01-01",
+                "area_km2": 10817.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.914482231881, -37.90850969522397]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Mount Alexander",
+                "confirmed_cases": "196",
+                "active_cases": "96",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 19754,
+                "last_updated": "2021-01-01",
+                "area_km2": 1529.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.19289762291024, -37.050776012570616]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Wangaratta",
+                "confirmed_cases": "184",
+                "active_cases": "12",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 29187,
+                "last_updated": "2021-01-01",
+                "area_km2": 3645.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.42831427643378, -36.5884029579162]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "South Gippsland",
+                "confirmed_cases": "183",
+                "active_cases": "24",
+                "new_cases": "2",
+                "rate": 0,
+                "population": 29914,
+                "last_updated": "2021-01-01",
+                "area_km2": 3296.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.07751823948416, -38.62169818063227]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Swan Hill",
+                "confirmed_cases": "183",
+                "active_cases": "58",
+                "new_cases": "3",
+                "rate": 0,
+                "population": 20649,
+                "last_updated": "2021-01-01",
+                "area_km2": 6115.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.12554369231583, -35.12027041994392]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Murrindindi",
+                "confirmed_cases": "122",
+                "active_cases": "18",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 14570,
+                "last_updated": "2021-01-01",
+                "area_km2": 3879.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.85797390249473, -37.526538068075844]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Murrindindi",
+                "confirmed_cases": "122",
+                "active_cases": "18",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 14570,
+                "last_updated": "2021-01-01",
+                "area_km2": 3879.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.63013848721982, -37.310941003172424]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Golden Plains",
+                "confirmed_cases": "114",
+                "active_cases": "9",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 23722,
+                "last_updated": "2021-01-01",
+                "area_km2": 2703.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.84250692691933, -37.882054432118274]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Warrnambool",
+                "confirmed_cases": "100",
+                "active_cases": "8",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 35181,
+                "last_updated": "2021-01-01",
+                "area_km2": 120.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.51180268648446, -38.37130235593635]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Northern Grampians",
+                "confirmed_cases": "101",
+                "active_cases": "15",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 11402,
+                "last_updated": "2021-01-01",
+                "area_km2": 5729.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.91933092778535, -36.8447149258998]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Hindmarsh",
+                "confirmed_cases": "94",
+                "active_cases": "1",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 5588,
+                "last_updated": "2021-01-01",
+                "area_km2": 7524.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [141.7526729172659, -36.05157918802615]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Benalla",
+                "confirmed_cases": "73",
+                "active_cases": "12",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 14037,
+                "last_updated": "2021-01-01",
+                "area_km2": 2352.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.02364291126597, -36.58699074048995]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Ararat",
+                "confirmed_cases": "65",
+                "active_cases": "2",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 11845,
+                "last_updated": "2021-01-01",
+                "area_km2": 4211.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.84321846391455, -37.472707555548105]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Hepburn",
+                "confirmed_cases": "70",
+                "active_cases": "17",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 15975,
+                "last_updated": "2021-01-01",
+                "area_km2": 1473
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.0575665924365, -37.316951636392425]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Indigo",
+                "confirmed_cases": "61",
+                "active_cases": "6",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 16701,
+                "last_updated": "2021-01-01",
+                "area_km2": 2040.1
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.72298114083281, -36.22553523749985]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Strathbogie",
+                "confirmed_cases": "57",
+                "active_cases": "9",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 10781,
+                "last_updated": "2021-01-01",
+                "area_km2": 3303.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [145.4349403853839, -36.76033194005131]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Glenelg",
+                "confirmed_cases": "43",
+                "active_cases": "2",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 19674,
+                "last_updated": "2021-01-01",
+                "area_km2": 6218.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [141.38583001335525, -37.870602866468595]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Central Goldfields",
+                "confirmed_cases": "42",
+                "active_cases": "4",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 13186,
+                "last_updated": "2021-01-01",
+                "area_km2": 1532.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.71396468491528, -37.00721928410482]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Mansfield",
+                "confirmed_cases": "46",
+                "active_cases": "14",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 9176,
+                "last_updated": "2021-01-01",
+                "area_km2": 3843.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.2068898465122, -37.20041684457023]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Moyne",
+                "confirmed_cases": "42",
+                "active_cases": "12",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 16953,
+                "last_updated": "2021-01-01",
+                "area_km2": 5481.7
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.49002984498102, -38.12246746865492]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Pyrenees",
+                "confirmed_cases": "39",
+                "active_cases": "5",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 7472,
+                "last_updated": "2021-01-01",
+                "area_km2": 3434.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.37502519653478, -37.31644770407694]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Horsham",
+                "confirmed_cases": "36",
+                "active_cases": "7",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 19921,
+                "last_updated": "2021-01-01",
+                "area_km2": 4266.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.09025559692415, -36.82566709101144]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Corangamite",
+                "confirmed_cases": "36",
+                "active_cases": "3",
+                "new_cases": "1",
+                "rate": 0,
+                "population": 16020,
+                "last_updated": "2021-01-01",
+                "area_km2": 4407.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.19863589850343, -38.20427517834021]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Southern Grampians",
+                "confirmed_cases": "33",
+                "active_cases": "9",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 16100,
+                "last_updated": "2021-01-01",
+                "area_km2": 6654
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.03311430930427, -37.53653946777447]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Queenscliffe",
+                "confirmed_cases": "25",
+                "active_cases": "6",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 2940,
+                "last_updated": "2021-01-01",
+                "area_km2": 8.6
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [144.656396, -38.268805]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Gannawarra",
+                "confirmed_cases": "24",
+                "active_cases": "0",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 10472,
+                "last_updated": "2021-01-01",
+                "area_km2": 3735.3
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.80401095282573, -35.75152970877023]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Loddon",
+                "confirmed_cases": "24",
+                "active_cases": "8",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 7504,
+                "last_updated": "2021-01-01",
+                "area_km2": 6696.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.867157900202, -36.36388153432314]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Alpine",
+                "confirmed_cases": "19",
+                "active_cases": "5",
+                "new_cases": "3",
+                "rate": 0,
+                "population": 12814,
+                "last_updated": "2021-01-01",
+                "area_km2": 4788.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [146.97453543900593, -36.85374833373806]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Towong",
+                "confirmed_cases": "10",
+                "active_cases": "1",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 6040,
+                "last_updated": "2021-01-01",
+                "area_km2": 6674.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [147.59903135571489, -36.35413427241365]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Buloke",
+                "confirmed_cases": "9",
+                "active_cases": "0",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 6124,
+                "last_updated": "2021-01-01",
+                "area_km2": 8000.4
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [143.00485829804265, -35.91242701799938]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "West Wimmera",
+                "confirmed_cases": "6",
+                "active_cases": "0",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 3841,
+                "last_updated": "2021-01-01",
+                "area_km2": 9108.2
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [141.27935878101286, -36.675382798418276]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "lga": "Yarriambiack",
+                "confirmed_cases": "2",
+                "active_cases": "0",
+                "new_cases": "0",
+                "rate": 0,
+                "population": 6639,
+                "last_updated": "2021-01-01",
+                "area_km2": 7325.8
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [142.41901786033213, -35.989995092006474]
+            }
+        }
+    ]
+}
