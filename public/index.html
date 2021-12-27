@@ -43,6 +43,22 @@
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
 
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-FHLZFM8GLG"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-FHLZFM8GLG");
+        </script>
+
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
         <link
             href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
