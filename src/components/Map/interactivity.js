@@ -48,7 +48,6 @@ export function pointClickHandler(event, map) {
     // const activeCasesDensity = Math.round((activeCases * Math.PI) / area);
     // const newCasesDensity = Math.round((newCases * Math.PI) / area);
 
-    console.log(event.features[0].properties.last_updated);
     return (
         <>
             <div className="drawer__header">{lga}</div>

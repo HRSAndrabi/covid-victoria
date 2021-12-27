@@ -1,6 +1,7 @@
+/* eslint import/no-webpack-loader-syntax: off */
 import "./Map.scss";
 import React, { useRef, useEffect, useState } from "react";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "!mapbox-gl";
 import ControlPanel from "../UI/ControlPanel/ControlPanel";
 import Drawer from "../UI/Drawer/Drawer";
 import { fetchVicData } from "../../data/data";

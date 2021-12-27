@@ -39,7 +39,8 @@ export async function fetchVicData() {
     );
     const result = await response.body.getReader().read();
     const decoder = new TextDecoder("utf-8");
-    const jsonData = await csvToJSON(decoder.decode(result.value));
+    const csvData = await decoder.decode(result.value);
+    const jsonData = await csvToJSON(csvData);
     const data = updateTemplate(jsonData);
 
     return data;
