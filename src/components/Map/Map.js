@@ -17,9 +17,10 @@ mapboxgl.accessToken = REACT_APP_MAPBOX_API_TOKEN;
 function Map() {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    let displayVariable = "confirmed_cases";
+    const [summaryStatistics, setSummaryStatistics] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerContent, setDrawerContent] = useState(null);
+    let displayVariable = "confirmed_cases";
 
     useEffect(() => {
         map.current = new mapboxgl.Map({
@@ -43,13 +44,14 @@ function Map() {
 
         async function loadLayers() {
             const data = await fetchVicData();
+            setSummaryStatistics(data.summaryStatistics);
             map.current.addSource("regionBounds", {
                 type: "vector",
                 url: "mapbox://hassdaddy3.8h1ha029",
             });
             map.current.addSource("vic-cases", {
                 type: "geojson",
-                data: data,
+                data: data.mapData,
                 cluster: true,
                 clusterMaxZoom: 9, // Max zoom to cluster points on
                 clusterRadius: 65, // Radius of each cluster when clustering points (defaults to 50)
@@ -132,6 +134,7 @@ function Map() {
         <>
             <ControlPanel
                 onDisplayVariableChange={displayVariableChangeHandler}
+                data={summaryStatistics}
             />
             <Drawer open={drawerOpen} content={drawerContent} />
             <div ref={mapContainer} className="map-container" />;

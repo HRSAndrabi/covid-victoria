@@ -63,23 +63,21 @@ const ControlPanel = (props) => {
                         <tbody>
                             <tr>
                                 <td className="left">Total confirmed:</td>
-                                <td className="right">10</td>
+                                <td className="right">
+                                    {props.data.totalConfirmed.toLocaleString()}
+                                </td>
                             </tr>
                             <tr>
                                 <td className="left">Total active:</td>
-                                <td className="right">10</td>
+                                <td className="right">
+                                    {props.data.totalActive.toLocaleString()}
+                                </td>
                             </tr>
                             <tr>
                                 <td className="left">New cases:</td>
-                                <td className="right">+10</td>
-                            </tr>
-                            <tr>
-                                <td className="left">{`\u{1F3E1} Overseas`}</td>
-                                <td className="right">+10</td>
-                            </tr>
-                            <tr>
-                                <td className="left">{`\u{1F30D} Overseas:`}</td>
-                                <td className="right">+10</td>
+                                <td className="right">
+                                    +{props.data.totalNew.toLocaleString()}
+                                </td>
                             </tr>
                         </tbody>
                     </table>

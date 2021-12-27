@@ -83,7 +83,7 @@
 
     .collapsible {
         width: 100%;
-        margin-bottom: 180px;
+        margin-bottom: 140px;
         transition: all 0.2s ease-in-out;
 
         &-inner {
@@ -108,7 +108,7 @@
                 color: #708090;
                 font-size: 0.8rem;
                 line-height: 1.2rem;
-                padding-top: 5px;
+                padding-top: $s2;
                 transition: all 0.2s ease-in-out;
 
                 a {

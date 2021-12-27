@@ -11,7 +11,11 @@ function csvToJSON(csv) {
         for (var j = 0; j < headers.length; j++) {
             obj[headers[j].trim()] = currentline[j];
         }
-        result[obj["LGADisplay"]] = obj;
+        if (obj["LGADisplay"]) {
+            result[obj["LGADisplay"]] = obj;
+        } else {
+            result[obj["LGA"]] = obj;
+        }
     }
     return result;
 }
@@ -38,6 +42,23 @@ async function updateTemplate(data) {
     }
 }
 
+function getSummaryStatistics(data) {
+    const summary_statistics = {};
+    summary_statistics["totalConfirmed"] = Object.values(data).reduce(
+        (total, obj) => parseInt(obj.cases) + total,
+        0
+    );
+    summary_statistics["totalActive"] = Object.values(data).reduce(
+        (total, obj) => parseInt(obj.active) + total,
+        0
+    );
+    summary_statistics["totalNew"] = Object.values(data).reduce(
+        (total, obj) => parseInt(obj.new) + total,
+        0
+    );
+    return summary_statistics;
+}
+
 export async function fetchVicData() {
     const response = await fetch(
         "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ9oKYNQhJ6v85dQ9qsybfMfc-eaJ9oKVDZKx-VGUr6szNoTbvsLTzpEaJ3oW_LZTklZbz70hDBUt-d/pub?gid=0&single=true&output=csv"
@@ -46,7 +67,13 @@ export async function fetchVicData() {
     const decoder = new TextDecoder("utf-8");
     const csvData = await decoder.decode(result.value);
     const jsonData = await csvToJSON(csvData);
-    const data = await updateTemplate(jsonData);
+    const summaryStatistics = getSummaryStatistics(jsonData);
+    const mapData = await updateTemplate(jsonData);
+
+    const data = {
+        mapData: mapData,
+        summaryStatistics: summaryStatistics,
+    };
 
     return data;
 }
