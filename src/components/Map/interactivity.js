@@ -22,7 +22,13 @@ export function clusterClickHandler(event, dataset, layer, map) {
 export function clusterMouseEnterHandler(event, map) {
     map.current.getCanvas().style.cursor = "pointer";
 
-    return <p>Multiple regions, click or zoom to expand</p>;
+    return (
+        <div className="collapsible small">
+            <div className="collapsible-inner">
+                Multiple regions, click or zoom to expand
+            </div>
+        </div>
+    );
 }
 
 export function pointClickHandler(event, map) {
@@ -49,65 +55,71 @@ export function pointClickHandler(event, map) {
     // const newCasesDensity = Math.round((newCases * Math.PI) / area);
 
     return (
-        <>
-            <div className="drawer__header">{lga}</div>
-            <div className="metadata">
-                <div>
-                    <span className="key">Population:</span>{" "}
-                    {population.toLocaleString()}
+        <div className="collapsible">
+            <div className="collapsible-inner">
+                <div className="drawer__header">{lga}</div>
+                <div className="metadata">
+                    <div>
+                        <span className="key">Population:</span>{" "}
+                        {population.toLocaleString()}
+                    </div>
+                    <div>
+                        <span className="key">Updated:</span> {lastUpdated}
+                    </div>
                 </div>
-                <div>
-                    <span className="key">Updated:</span> {lastUpdated}
+                <table>
+                    <thead>
+                        <tr>
+                            <th className="left">Metric</th>
+                            <th className="right">Number</th>
+                            <th className="right">Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td className="left">Confirmed cases:</td>
+                            <td className="right">
+                                {confirmedCases.toLocaleString()}
+                            </td>
+                            <td className="right">
+                                {confirmedCasesRate} per 1,000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="left">Active cases:</td>
+                            <td className="right">
+                                {activeCases.toLocaleString()}
+                            </td>
+                            <td className="right">
+                                {activeCasesRate} per 1,000
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="left">New cases:</td>
+                            <td className="right">
+                                {newCases.toLocaleString()}
+                            </td>
+                            <td className="right">{newCasesRate} per 1,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div className="drawer__footer">
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19"
+                    >
+                        {`\u{1F52C}`} Testing
+                    </a>
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://covid-vaccine.healthdirect.gov.au/booking/"
+                    >
+                        {`\u{1F489}`} Vaccination
+                    </a>
                 </div>
             </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th className="left">Metric</th>
-                        <th className="right">Number</th>
-                        <th className="right">Rate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="left">Confirmed cases:</td>
-                        <td className="right">
-                            {confirmedCases.toLocaleString()}
-                        </td>
-                        <td className="right">
-                            {confirmedCasesRate} per 1,000
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="left">Active cases:</td>
-                        <td className="right">
-                            {activeCases.toLocaleString()}
-                        </td>
-                        <td className="right">{activeCasesRate} per 1,000</td>
-                    </tr>
-                    <tr>
-                        <td className="left">New cases:</td>
-                        <td className="right">{newCases.toLocaleString()}</td>
-                        <td className="right">{newCasesRate} per 1,000</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div className="drawer__footer">
-                <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19"
-                >
-                    {`\u{1F52C}`} Testing
-                </a>
-                <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href="https://covid-vaccine.healthdirect.gov.au/booking/"
-                >
-                    {`\u{1F489}`} Vaccination
-                </a>
-            </div>
-        </>
+        </div>
     );
 }

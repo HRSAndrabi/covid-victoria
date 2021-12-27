@@ -16,10 +16,42 @@
     @include breakpoint-max($md) {
         width: calc(100% - $s6);
     }
+
+    &:hover {
+        padding-bottom: $s2;
+        cursor: pointer;
+    }
+
+    .collapsible {
+        margin-bottom: 200px;
+        transition: all 0.2s ease-in-out;
+
+        .collapsible-inner {
+            position: absolute;
+        }
+    }
+
+    .collapsible.small {
+        margin-bottom: 30px;
+    }
 }
 
 .drawer.open {
     bottom: 0;
+}
+
+.drawer__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 20px;
+    padding-bottom: $s1;
+    color: #789;
+
+    svg {
+        transform: scaleX(1.5);
+    }
 }
 
 .drawer-inner {
