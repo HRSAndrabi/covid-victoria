@@ -38,11 +38,11 @@ async function updateTemplate(data) {
         return template;
     } catch (error) {
         const data = await fetchVicData();
-        return data;
+        return data.mapData;
     }
 }
 
-function getSummaryStatistics(data) {
+async function getSummaryStatistics(data) {
     const summary_statistics = {};
     summary_statistics["totalConfirmed"] = Object.values(data).reduce(
         (total, obj) => parseInt(obj.cases) + total,
@@ -67,8 +67,8 @@ export async function fetchVicData() {
     const decoder = new TextDecoder("utf-8");
     const csvData = await decoder.decode(result.value);
     const jsonData = await csvToJSON(csvData);
-    const summaryStatistics = getSummaryStatistics(jsonData);
     const mapData = await updateTemplate(jsonData);
+    const summaryStatistics = await getSummaryStatistics(jsonData);
 
     const data = {
         mapData: mapData,
