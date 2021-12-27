@@ -56,6 +56,14 @@ async function getSummaryStatistics(data) {
         (total, obj) => parseInt(obj.new) + total,
         0
     );
+    // Recursive solution to getting back NaNs
+    if (
+        summary_statistics.totalConfirmed !== summary_statistics.totalConfirmed
+    ) {
+        console.log("err");
+        const newData = await fetchVicData();
+        return newData.summaryStatistics;
+    }
     return summary_statistics;
 }
 
