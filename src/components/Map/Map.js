@@ -34,6 +34,10 @@ function Map() {
             attributionControl: false,
         });
 
+        map.current.on("load", function () {
+            map.current.resize();
+        });
+
         async function loadLayers() {
             const data = await fetchVicData();
             map.current.addSource("regionBounds", {
