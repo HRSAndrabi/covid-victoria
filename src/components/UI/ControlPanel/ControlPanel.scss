@@ -5,9 +5,8 @@
     left: $s3;
     top: $s3;
     bottom: auto;
-    height: auto;
     width: 320px;
-    overflow-x: auto;
+    overflow: hidden;
     padding: $s3;
     border-radius: 18px;
     backdrop-filter: blur(20px) saturate(3);
@@ -20,11 +19,21 @@
     @include breakpoint-max($md) {
         width: calc(100% - $s6);
     }
+    &:hover {
+        cursor: pointer;
+    }
+
+    svg {
+        transition: transform 0.2s ease-in-out;
+    }
 
     &__header {
         color: #fff;
         font-weight: 600;
         font-size: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .pills {
@@ -72,30 +81,57 @@
         }
     }
 
-    .summary-table {
-        font-size: 0.9rem;
-        line-height: 1.1rem;
+    .collapsible {
+        width: 100%;
+        margin-bottom: 180px;
+        transition: all 0.2s ease-in-out;
 
-        td.left {
-            text-align: left;
-        }
-        td.right {
-            text-align: right;
-            font-weight: 600;
+        &-inner {
+            position: absolute;
+
+            .summary-table {
+                width: 100%;
+                font-size: 0.9rem;
+                line-height: 1.1rem;
+                transition: all 0.2s ease-in-out;
+
+                td.left {
+                    text-align: left;
+                }
+                td.right {
+                    text-align: right;
+                    font-weight: 600;
+                }
+            }
+
+            .attribution {
+                color: #708090;
+                font-size: 0.8rem;
+                line-height: 1.2rem;
+                padding-top: 5px;
+                transition: all 0.2s ease-in-out;
+
+                a {
+                    border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
+                    color: hsla(0, 0%, 100%, 0.7);
+                    display: inline-block;
+                    text-decoration: none;
+                }
+            }
         }
     }
 
-    .attribution {
-        color: #708090;
-        font-size: 0.8rem;
-        line-height: 1.2rem;
-        padding-top: 5px;
-
-        a {
-            border-bottom: 1px solid hsla(0, 0%, 100%, 0.3);
-            color: hsla(0, 0%, 100%, 0.7);
-            display: inline-block;
-            text-decoration: none;
-        }
+    .collapsible.collapsed {
+        margin-bottom: 0;
     }
+}
+
+.control-panel.collapsed {
+    svg {
+        transform: rotate(180deg);
+    }
+}
+
+.hidden {
+    opacity: 0;
 }
