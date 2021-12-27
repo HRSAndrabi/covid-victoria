@@ -11,8 +11,8 @@ import {
     pointClickHandler,
 } from "./interactivity";
 
-mapboxgl.accessToken =
-    "pk.eyJ1IjoiaGFzc2RhZGR5MyIsImEiOiJjazhmY3JyaW8wMzB0M3RuejQ4bnVvdzA5In0.jQj5RVAoLo-Rsht5-zi_Ig";
+const { REACT_APP_MAPBOX_API_TOKEN } = process.env;
+mapboxgl.accessToken = REACT_APP_MAPBOX_API_TOKEN;
 
 function Map() {
     const mapContainer = useRef(null);
