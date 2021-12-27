@@ -141,7 +141,7 @@ function Map() {
                 data={summaryStatistics}
             />
             <Drawer open={drawerOpen} content={drawerContent} />
-            <div ref={mapContainer} className="map-container" />;
+            <div ref={mapContainer} className="map-container" />
         </>
     );
 }

@@ -16,7 +16,7 @@ html {
     text-size-adjust: none;
 
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
 
     min-height: 100vh;
 }
@@ -24,7 +24,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 *,
@@ -47,4 +47,8 @@ h6 {
     font-family: $sans-serif-stack;
     color: $cp-darkgrey;
     font-weight: 600;
+}
+
+.app-container {
+    overflow: clip !important;
 }
