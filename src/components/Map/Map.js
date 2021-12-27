@@ -60,13 +60,17 @@ function Map() {
                     lga: ["concat", ["get", "lga"]],
                 },
             });
+
             map.current.addLayer(require("./layers/clusters"));
             map.current.addLayer(require("./layers/points"));
             map.current.addLayer(require("./layers/counts"));
+            map.current.addLayer(require("./layers/regionBorders"));
+            map.current.addLayer(require("./layers/regionFills"));
         }
         loadLayers();
 
         // Interactivity
+        let hoveredStateId = null;
         map.current.on("click", "clusters", function (event) {
             clusterClickHandler(event, "vic-cases", "clusters", map);
             setDrawerOpen(false);
@@ -89,9 +93,6 @@ function Map() {
         map.current.on("mouseleave", "points", function (event) {
             map.current.getCanvas().style.cursor = "grab";
         });
-        // map.current.on("preclick", function (event) {
-        //     setDrawerOpen(!drawerOpen);
-        // });
         map.current.on("click", function (event) {
             if (event.defaultPrevented === false) {
                 setDrawerOpen(false);

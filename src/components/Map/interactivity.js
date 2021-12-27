@@ -123,3 +123,46 @@ export function pointClickHandler(event, map) {
         </div>
     );
 }
+
+export function regionMouseEnterHandler(
+    event,
+    dataset,
+    layer,
+    hoveredStateId,
+    map
+) {
+    hoveredStateId = null;
+    if (event.features.length > 0) {
+        if (hoveredStateId) {
+            map.current.setFeatureState(
+                { source: dataset, sourceLayer: layer, id: hoveredStateId },
+                { hover: false }
+            );
+        }
+        hoveredStateId = event.features[0].id;
+        map.current.setFeatureState(
+            { source: dataset, sourceLayer: layer, id: hoveredStateId },
+            { hover: true }
+        );
+    }
+}
+
+export function regionMouseLeaveHandler(
+    event,
+    dataset,
+    layer,
+    hoveredStateId,
+    map
+) {
+    hoveredStateId = event.features[0].id;
+    map.current.setFeatureState(
+        {
+            source: dataset,
+            sourceLayer: layer,
+            id: hoveredStateId,
+        },
+        { hover: false }
+    );
+
+    hoveredStateId = null;
+}

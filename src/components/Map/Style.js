@@ -17,7 +17,6 @@ module.exports = {
             400,
             "#ff003f",
         ],
-
         "circle-radius": [
             "step",
             ["get", "confirmed_cases"],
@@ -27,10 +26,8 @@ module.exports = {
             300,
             25,
         ],
-
         "circle-opacity": 0.6,
         "circle-stroke-width": 2,
-
         "circle-color": "#1a1a1a",
         "circle-stroke-opacity": 0.95,
     },
