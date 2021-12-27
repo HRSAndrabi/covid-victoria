@@ -34,6 +34,9 @@ function Map() {
             attributionControl: false,
         });
 
+        map.current.dragRotate.disable();
+        map.current.touchZoomRotate.disableRotation();
+
         map.current.on("load", function () {
             map.current.resize();
         });

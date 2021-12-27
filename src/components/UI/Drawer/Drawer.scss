@@ -47,10 +47,9 @@
 .drawer__control {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-size: 2rem;
     height: 20px;
-    padding-bottom: $s1;
     color: #789;
 
     svg {
