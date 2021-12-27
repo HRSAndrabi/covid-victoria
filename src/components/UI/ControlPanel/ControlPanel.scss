@@ -7,7 +7,6 @@
     bottom: auto;
     width: 320px;
     overflow: hidden;
-    padding: $s3;
     border-radius: 18px;
     backdrop-filter: blur(20px) saturate(3);
     background-color: rgba(0, 0, 0, 0.3);
@@ -34,10 +33,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: $s3 $s3 0 $s3;
     }
 
     .pills {
-        margin: 0;
+        margin: 0 $s3;
         padding: 0;
         display: flex;
         list-style: none;
@@ -83,10 +83,12 @@
 
     .collapsible {
         width: 100%;
-        margin-bottom: 140px;
+        margin-bottom: 155px;
         transition: all 0.2s ease-in-out;
 
         &-inner {
+            width: 100%;
+            padding: 0 $s3 $s3 $s3;
             position: absolute;
 
             .summary-table {
