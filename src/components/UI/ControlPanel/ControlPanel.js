@@ -95,7 +95,7 @@ const ControlPanel = (props) => {
                         </a>
                         . Available on{" "}
                         <a
-                            href="https://github.com/cheeaun/exploretrees-sg"
+                            href="https://github.com/HRSAndrabi/covid-victoria"
                             target="_blank"
                             rel="noreferrer"
                         >
