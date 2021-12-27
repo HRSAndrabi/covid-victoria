@@ -16,7 +16,7 @@ const ControlPanel = (props) => {
     const toggleExpandControlPanel = () => {
         setCollapsed(!collapsed);
     };
-    console.log(props);
+
     return (
         <div className={`control-panel ${collapsed ? "collapsed" : ""}`}>
             <div
