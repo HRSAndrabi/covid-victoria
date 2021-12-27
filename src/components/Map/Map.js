@@ -1,8 +1,14 @@
 import "./Map.scss";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
 import ControlPanel from "../UI/ControlPanel/ControlPanel";
+import Drawer from "../UI/Drawer/Drawer";
 import { fetchVicData } from "../../data/data";
+import {
+    clusterClickHandler,
+    clusterMouseEnterHandler,
+    pointClickHandler,
+} from "./interactivity";
 
 mapboxgl.accessToken =
     "pk.eyJ1IjoiaGFzc2RhZGR5MyIsImEiOiJjazhmY3JyaW8wMzB0M3RuejQ4bnVvdzA5In0.jQj5RVAoLo-Rsht5-zi_Ig";
@@ -10,7 +16,9 @@ mapboxgl.accessToken =
 function Map() {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const Style = require("./Style");
+    let displayVariable = "confirmed_cases";
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const [drawerContent, setDrawerContent] = useState(null);
 
     useEffect(() => {
         map.current = new mapboxgl.Map({
@@ -22,17 +30,15 @@ function Map() {
                 [145.5 - 7, -40], // Southwest coordinates
                 [145.5 + 5.5, -33], // Northeast coordinates
             ],
+            attributionControl: false,
         });
 
-        map.current.on("load", function () {
+        async function loadLayers() {
+            const data = await fetchVicData();
             map.current.addSource("regionBounds", {
                 type: "vector",
                 url: "mapbox://hassdaddy3.8h1ha029",
             });
-        });
-
-        async function loadData() {
-            const data = await fetchVicData();
             map.current.addSource("vic-cases", {
                 type: "geojson",
                 data: data,
@@ -49,57 +55,47 @@ function Map() {
                     lga: ["concat", ["get", "lga"]],
                 },
             });
-
-            // Clustered points
-            map.current.addLayer({
-                id: "clusters",
-                type: "circle",
-                source: "vic-cases",
-                filter: [
-                    "all",
-                    ["has", "point_count"],
-                    [">", ["get", "confirmed_cases"], 0],
-                ],
-                layout: { visibility: "visible" },
-                paint: Style["circleStyling"],
-            });
-
-            // Unclustered points
-            map.current.addLayer({
-                id: "points",
-                type: "circle",
-                source: "vic-cases",
-                filter: [
-                    "all",
-                    ["!", ["has", "point_count"]],
-                    [">", ["get", "confirmed_cases"], 0],
-                ],
-                layout: { visibility: "visible" },
-                paint: Style["circleStyling"],
-            });
-
-            // Text for clustered/unclustered points
-            map.current.addLayer({
-                id: "cluster-counts",
-                type: "symbol",
-                source: "vic-cases",
-                filter: [">", ["get", "confirmed_cases"], 0],
-                layout: {
-                    "text-field": `{${"confirmed_cases"}}`,
-                    "text-font": [
-                        "DIN Offc Pro Medium",
-                        "Arial Unicode MS Bold",
-                    ],
-                    "text-size": 12,
-                    visibility: "visible",
-                },
-                paint: {
-                    "text-color": "#fff5f0",
-                },
-            });
+            map.current.addLayer(require("./layers/clusters"));
+            map.current.addLayer(require("./layers/points"));
+            map.current.addLayer(require("./layers/counts"));
         }
-        loadData();
-    });
+        loadLayers();
+
+        // Interactivity
+        map.current.on("click", "clusters", function (event) {
+            clusterClickHandler(event, "vic-cases", "clusters", map);
+            setDrawerOpen(false);
+        });
+        map.current.on("mouseenter", "clusters", function (event) {
+            setDrawerContent(clusterMouseEnterHandler(event, map));
+            setDrawerOpen(true);
+        });
+        map.current.on("mouseenter", "points", function (event) {
+            setDrawerContent(pointClickHandler(event, map));
+            setDrawerOpen(true);
+        });
+        map.current.on("click", "points", function (event) {
+            setDrawerContent(pointClickHandler(event, map));
+            setDrawerOpen(true);
+        });
+        map.current.on("mouseleave", "clusters", function (event) {
+            map.current.getCanvas().style.cursor = "grab";
+        });
+        map.current.on("mouseleave", "points", function (event) {
+            map.current.getCanvas().style.cursor = "grab";
+        });
+        // map.current.on("preclick", function (event) {
+        //     setDrawerOpen(!drawerOpen);
+        // });
+        map.current.on("click", function (event) {
+            if (event.defaultPrevented === false) {
+                setDrawerOpen(false);
+            }
+        });
+
+        // Clean up on unmount
+        return () => map.remove();
+    }, [displayVariable]);
 
     const displayVariableChangeHandler = (newDisplayVariable) => {
         // Setting properties as opposed to state to avoid
@@ -114,16 +110,13 @@ function Map() {
             ["!", ["has", "point_count"]],
             [">", ["get", newDisplayVariable], 0],
         ]);
-        map.current.setFilter("cluster-counts", [
-            ">",
-            ["get", newDisplayVariable],
-            0,
-        ]);
+        map.current.setFilter("counts", [">", ["get", newDisplayVariable], 0]);
         map.current.setLayoutProperty(
-            "cluster-counts",
+            "counts",
             "text-field",
             `{${newDisplayVariable}}`
         );
+        displayVariable = newDisplayVariable;
     };
 
     return (
@@ -131,6 +124,7 @@ function Map() {
             <ControlPanel
                 onDisplayVariableChange={displayVariableChangeHandler}
             />
+            <Drawer open={drawerOpen} content={drawerContent} />
             <div ref={mapContainer} className="map-container" />;
         </>
     );

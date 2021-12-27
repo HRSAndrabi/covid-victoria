@@ -16,21 +16,27 @@ const ControlPanel = (props) => {
             <div className="control-panel__header">COVID-19 in Victoria</div>
             <ul className="pills">
                 <li
-                    className={selected === "confirmed_cases" ? "selected" : ""}
+                    className={`display-variable ${
+                        selected === "confirmed_cases" ? "selected" : ""
+                    }`}
                     data-value="confirmed_cases"
                     onClick={clickHandler}
                 >
                     Confirmed
                 </li>
                 <li
-                    className={selected === "active_cases" ? "selected" : ""}
+                    className={`display-variable ${
+                        selected === "active_cases" ? "selected" : ""
+                    }`}
                     data-value="active_cases"
                     onClick={clickHandler}
                 >
                     Active
                 </li>
                 <li
-                    className={selected === "new_cases" ? "selected" : ""}
+                    className={`display-variable ${
+                        selected === "new_cases" ? "selected" : ""
+                    }`}
                     data-value="new_cases"
                     onClick={clickHandler}
                 >
@@ -64,30 +70,46 @@ const ControlPanel = (props) => {
             <div className="attribution">
                 {" "}
                 Visualized by{" "}
-                <a href="https://twitter.com/hrs_andrabi">@hrs_andrabi</a>.
-                Available on{" "}
+                <a
+                    href="https://twitter.com/hrs_andrabi"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    @hrs_andrabi
+                </a>
+                . Available on{" "}
                 <a
                     href="https://github.com/cheeaun/exploretrees-sg"
                     target="_blank"
+                    rel="noreferrer"
                 >
                     GitHub
                 </a>
                 . <br /> Data from{" "}
-                <a href="https://www.dhhs.vic.gov.au/" target="_blank">
+                <a
+                    href="https://www.dhhs.vic.gov.au/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     dhhs.vic.gov.au
                 </a>
                 ,{" "}
-                <a href="https://data.gov.au/" target="_blank">
+                <a href="https://data.gov.au/" target="_blank" rel="noreferrer">
                     data.gov.au
                 </a>
                 . <br />
                 Mapping{" "}
-                <a href="https://www.mapbox.com/about/maps/" target="_blank">
+                <a
+                    href="https://www.mapbox.com/about/maps/"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     © Mapbox
                 </a>{" "}
                 <a
                     href="https://www.openstreetmap.org/copyright"
                     target="_blank"
+                    rel="noreferrer"
                 >
                     © OpenStreetMap.
                 </a>{" "}

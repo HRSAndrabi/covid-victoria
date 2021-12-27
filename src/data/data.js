@@ -9,7 +9,7 @@ function csvToJSON(csv) {
         var obj = {};
         var currentline = lines[i].split(",");
         for (var j = 0; j < headers.length; j++) {
-            obj[headers[j]] = currentline[j];
+            obj[headers[j].trim()] = currentline[j];
         }
         result[obj["LGADisplay"]] = obj;
     }
@@ -26,6 +26,7 @@ function updateTemplate(data) {
                 confirmed_cases: parseInt(data[lga]["cases"]),
                 active_cases: parseInt(data[lga]["active"]),
                 new_cases: parseInt(data[lga]["new"]),
+                last_updated: data[lga]["file_processed_date"],
             },
         };
     });
