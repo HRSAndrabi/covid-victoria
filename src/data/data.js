@@ -16,21 +16,26 @@ function csvToJSON(csv) {
     return result;
 }
 
-function updateTemplate(data) {
-    template["features"] = template["features"].map((element) => {
-        const lga = element["properties"]["lga"];
-        return {
-            ...element,
-            properties: {
-                ...element.properties,
-                confirmed_cases: parseInt(data[lga]["cases"]),
-                active_cases: parseInt(data[lga]["active"]),
-                new_cases: parseInt(data[lga]["new"]),
-                last_updated: data[lga]["file_processed_date"],
-            },
-        };
-    });
-    return template;
+async function updateTemplate(data) {
+    try {
+        template["features"] = template["features"].map((element) => {
+            const lga = element["properties"]["lga"];
+            return {
+                ...element,
+                properties: {
+                    ...element.properties,
+                    confirmed_cases: parseInt(data[lga]["cases"]),
+                    active_cases: parseInt(data[lga]["active"]),
+                    new_cases: parseInt(data[lga]["new"]),
+                    last_updated: data[lga]["file_processed_date"],
+                },
+            };
+        });
+        return template;
+    } catch (error) {
+        const data = await fetchVicData();
+        return data;
+    }
 }
 
 export async function fetchVicData() {
@@ -41,7 +46,7 @@ export async function fetchVicData() {
     const decoder = new TextDecoder("utf-8");
     const csvData = await decoder.decode(result.value);
     const jsonData = await csvToJSON(csvData);
-    const data = updateTemplate(jsonData);
+    const data = await updateTemplate(jsonData);
 
     return data;
 }
