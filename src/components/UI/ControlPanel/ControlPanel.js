@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "./ControlPanel.scss";
 import { FiChevronUp } from "react-icons/fi";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const ControlPanel = (props) => {
     const [selected, setSelected] = useState("confirmed_cases");
@@ -27,7 +28,14 @@ const ControlPanel = (props) => {
                 <FiChevronUp />
             </div>
             <div className="timestamp">
-                Updated: <span>{props.data.lastUpdated}</span>
+                Updated:{" "}
+                <span>
+                    {props.data ? (
+                        props.data.lastUpdated
+                    ) : (
+                        <ClipLoader size={10} color="fff" />
+                    )}
+                </span>
             </div>
             <ul className="pills">
                 <li
@@ -67,19 +75,31 @@ const ControlPanel = (props) => {
                             <tr>
                                 <td className="left">Total confirmed:</td>
                                 <td className="right">
-                                    {props.data.totalConfirmed.toLocaleString()}
+                                    {props.data ? (
+                                        props.data.totalConfirmed.toLocaleString()
+                                    ) : (
+                                        <ClipLoader size={10} color="fff" />
+                                    )}
                                 </td>
                             </tr>
                             <tr>
                                 <td className="left">Total active:</td>
                                 <td className="right">
-                                    {props.data.totalActive.toLocaleString()}
+                                    {props.data ? (
+                                        props.data.totalActive.toLocaleString()
+                                    ) : (
+                                        <ClipLoader size={10} color="fff" />
+                                    )}
                                 </td>
                             </tr>
                             <tr>
                                 <td className="left">New cases:</td>
                                 <td className="right">
-                                    {props.data.totalNew.toLocaleString()}
+                                    {props.data ? (
+                                        props.data.totalNew.toLocaleString()
+                                    ) : (
+                                        <ClipLoader size={10} color="fff" />
+                                    )}
                                 </td>
                             </tr>
                         </tbody>

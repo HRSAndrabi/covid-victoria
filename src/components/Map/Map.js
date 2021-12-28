@@ -17,12 +17,7 @@ mapboxgl.accessToken = REACT_APP_MAPBOX_API_TOKEN;
 function Map() {
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [summaryStatistics, setSummaryStatistics] = useState({
-        totalConfirmed: "...",
-        totalActive: "...",
-        totalNew: "...",
-        lastUpdated: "...",
-    });
+    const [summaryStatistics, setSummaryStatistics] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerContent, setDrawerContent] = useState(null);
     let displayVariable = "confirmed_cases";
