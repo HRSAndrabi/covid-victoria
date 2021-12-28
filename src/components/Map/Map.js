@@ -89,7 +89,6 @@ function Map() {
         });
         map.current.on("click", function (event) {
             let results = mapClickHandler(event, hoveredStateId, map);
-            console.log(results);
             setDrawerContent(results.drawerContent);
             setDrawerOpen(results.drawerOpen);
             hoveredStateId = results.hoveredStateId;

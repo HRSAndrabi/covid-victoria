@@ -141,8 +141,6 @@ export function mapClickHandler(event, hoveredStateId, map) {
         );
 
         newHoveredStateId = selectedRegion[0].id;
-        console.log(hoveredStateId);
-        console.log(newHoveredStateId);
         if (hoveredStateId) {
             map.current.setFeatureState(
                 {
