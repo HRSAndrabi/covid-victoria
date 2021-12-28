@@ -10,7 +10,7 @@
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     backdrop-filter: blur(20px) saturate(3);
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 1px hsl(0deg 0% 100% / 15%);
     transition: all 0.3s ease-in-out;
     @include breakpoint-max($md) {

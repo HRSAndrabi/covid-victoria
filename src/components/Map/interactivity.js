@@ -60,7 +60,7 @@ export function mapClickHandler(event, drawerContent, hoveredStateId, map) {
         if (event.type === "click") {
             map.current.flyTo({
                 center: selectedPoint[0].geometry.coordinates,
-                zoom: 12,
+                zoom: 10,
             });
         }
 
