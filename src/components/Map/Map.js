@@ -8,7 +8,7 @@ import { fetchVicData } from "../../data/data";
 import {
     clusterClickHandler,
     clusterMouseEnterHandler,
-    pointClickHandler,
+    mapClickHandler,
 } from "./interactivity";
 
 const { REACT_APP_MAPBOX_API_TOKEN } = process.env;
@@ -88,24 +88,18 @@ function Map() {
             setDrawerContent(clusterMouseEnterHandler(event, map));
             setDrawerOpen(true);
         });
-        map.current.on("mouseenter", "points", function (event) {
-            setDrawerContent(pointClickHandler(event, map));
-            setDrawerOpen(true);
-        });
-        map.current.on("click", "points", function (event) {
-            setDrawerContent(pointClickHandler(event, map));
-            setDrawerOpen(true);
+        map.current.on("click", function (event) {
+            let results = mapClickHandler(event, hoveredStateId, map);
+            console.log(results);
+            setDrawerContent(results.drawerContent);
+            setDrawerOpen(results.drawerOpen);
+            hoveredStateId = results.hoveredStateId;
         });
         map.current.on("mouseleave", "clusters", function (event) {
             map.current.getCanvas().style.cursor = "grab";
         });
         map.current.on("mouseleave", "points", function (event) {
             map.current.getCanvas().style.cursor = "grab";
-        });
-        map.current.on("click", function (event) {
-            if (event.defaultPrevented === false) {
-                setDrawerOpen(false);
-            }
         });
 
         // Clean up on unmount

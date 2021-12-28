@@ -31,138 +31,156 @@ export function clusterMouseEnterHandler(event, map) {
     );
 }
 
-export function pointClickHandler(event, map) {
+export function mapClickHandler(event, hoveredStateId, map) {
     event.preventDefault();
-    map.current.getCanvas().style.cursor = "pointer";
+    const bbox = [
+        [event.point.x - 1, event.point.y - 1],
+        [event.point.x + 1, event.point.y + 1],
+    ];
+    let drawerContent = null;
+    let newHoveredStateId = null;
+    let drawerOpen = false;
 
-    const confirmedCases = event.features[0].properties.confirmed_cases;
-    const activeCases = event.features[0].properties.active_cases;
-    const newCases = event.features[0].properties.new_cases;
-    const lga = event.features[0].properties.lga;
-    const population = event.features[0].properties.population;
-    const lastUpdated = moment(
-        event.features[0].properties.last_updated,
-        "YYYY-MM-DD"
-    ).format("DD MMM, YYYY");
-    // const area = event.features[0].properties.area_km2;
-    // const coordinates = event.features[0].geometry.coordinates.slice();
+    // Find features intersecting the bounding box.
+    const selectedPoint = map.current.queryRenderedFeatures(bbox, {
+        layers: ["points"],
+    });
+    const selectedRegion = map.current.queryRenderedFeatures(bbox, {
+        layers: ["region-fills"],
+    });
 
-    const confirmedCasesRate = Math.round((confirmedCases * 1000) / population);
-    const activeCasesRate = Math.round((activeCases * 1000) / population);
-    const newCasesRate = Math.round((newCases * 1000) / population);
-    // const confirmedCasesDensity = Math.round((confirmedCases * Math.PI) / area);
-    // const activeCasesDensity = Math.round((activeCases * Math.PI) / area);
-    // const newCasesDensity = Math.round((newCases * Math.PI) / area);
+    if (selectedPoint.length > 0 && selectedRegion.length > 0) {
+        const confirmedCases = selectedPoint[0].properties.confirmed_cases;
+        const activeCases = selectedPoint[0].properties.active_cases;
+        const newCases = selectedPoint[0].properties.new_cases;
+        const lga = selectedPoint[0].properties.lga;
+        const population = selectedPoint[0].properties.population;
+        const lastUpdated = moment(
+            selectedPoint[0].properties.last_updated,
+            "YYYY-MM-DD"
+        ).format("DD MMM, YYYY");
+        // const area = selectedPoint[0].properties.area_km2;
+        // const coordinates = selectedPoint[0].geometry.coordinates.slice();
 
-    return (
-        <div className="collapsible">
-            <div className="collapsible-inner">
-                <div className="drawer__header">{lga}</div>
-                <div className="metadata">
-                    <div>
-                        <span className="key">Population:</span>{" "}
-                        {population.toLocaleString()}
+        const confirmedCasesRate = Math.round(
+            (confirmedCases * 1000) / population
+        );
+        const activeCasesRate = Math.round((activeCases * 1000) / population);
+        const newCasesRate = Math.round((newCases * 1000) / population);
+        // const confirmedCasesDensity = Math.round((confirmedCases * Math.PI) / area);
+        // const activeCasesDensity = Math.round((activeCases * Math.PI) / area);
+        // const newCasesDensity = Math.round((newCases * Math.PI) / area);
+
+        drawerContent = (
+            <div className="collapsible">
+                <div className="collapsible-inner">
+                    <div className="drawer__header">{lga}</div>
+                    <div className="metadata">
+                        <div>
+                            <span className="key">Population:</span>{" "}
+                            {population.toLocaleString()}
+                        </div>
+                        <div>
+                            <span className="key">Updated:</span> {lastUpdated}
+                        </div>
                     </div>
-                    <div>
-                        <span className="key">Updated:</span> {lastUpdated}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className="left">Metric</th>
+                                <th className="right">Number</th>
+                                <th className="right">Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td className="left">Confirmed cases:</td>
+                                <td className="right">
+                                    {confirmedCases.toLocaleString()}
+                                </td>
+                                <td className="right">
+                                    {confirmedCasesRate} per 1,000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="left">Active cases:</td>
+                                <td className="right">
+                                    {activeCases.toLocaleString()}
+                                </td>
+                                <td className="right">
+                                    {activeCasesRate} per 1,000
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="left">New cases:</td>
+                                <td className="right">
+                                    {newCases.toLocaleString()}
+                                </td>
+                                <td className="right">
+                                    {newCasesRate} per 1,000
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div className="drawer__footer">
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19"
+                        >
+                            {`\u{1F52C}`} Testing
+                        </a>
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://covid-vaccine.healthdirect.gov.au/booking/"
+                        >
+                            {`\u{1F489}`} Vaccination
+                        </a>
                     </div>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th className="left">Metric</th>
-                            <th className="right">Number</th>
-                            <th className="right">Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td className="left">Confirmed cases:</td>
-                            <td className="right">
-                                {confirmedCases.toLocaleString()}
-                            </td>
-                            <td className="right">
-                                {confirmedCasesRate} per 1,000
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="left">Active cases:</td>
-                            <td className="right">
-                                {activeCases.toLocaleString()}
-                            </td>
-                            <td className="right">
-                                {activeCasesRate} per 1,000
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="left">New cases:</td>
-                            <td className="right">
-                                {newCases.toLocaleString()}
-                            </td>
-                            <td className="right">{newCasesRate} per 1,000</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div className="drawer__footer">
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19"
-                    >
-                        {`\u{1F52C}`} Testing
-                    </a>
-                    <a
-                        target="_blank"
-                        rel="noreferrer"
-                        href="https://covid-vaccine.healthdirect.gov.au/booking/"
-                    >
-                        {`\u{1F489}`} Vaccination
-                    </a>
                 </div>
             </div>
-        </div>
-    );
-}
+        );
 
-export function regionMouseEnterHandler(
-    event,
-    dataset,
-    layer,
-    hoveredStateId,
-    map
-) {
-    hoveredStateId = null;
-    if (event.features.length > 0) {
+        newHoveredStateId = selectedRegion[0].id;
+        console.log(hoveredStateId);
+        console.log(newHoveredStateId);
         if (hoveredStateId) {
             map.current.setFeatureState(
-                { source: dataset, sourceLayer: layer, id: hoveredStateId },
+                {
+                    source: "regionBounds",
+                    sourceLayer: "VicUpdatedLGA-c07oek",
+                    id: hoveredStateId,
+                },
                 { hover: false }
             );
         }
-        hoveredStateId = event.features[0].id;
         map.current.setFeatureState(
-            { source: dataset, sourceLayer: layer, id: hoveredStateId },
+            {
+                source: "regionBounds",
+                sourceLayer: "VicUpdatedLGA-c07oek",
+                id: newHoveredStateId,
+            },
             { hover: true }
         );
+
+        drawerOpen = true;
+    } else {
+        if (hoveredStateId) {
+            map.current.setFeatureState(
+                {
+                    source: "regionBounds",
+                    sourceLayer: "VicUpdatedLGA-c07oek",
+                    id: hoveredStateId,
+                },
+                { hover: false }
+            );
+        }
     }
-}
 
-export function regionMouseLeaveHandler(
-    event,
-    dataset,
-    layer,
-    hoveredStateId,
-    map
-) {
-    hoveredStateId = event.features[0].id;
-    map.current.setFeatureState(
-        {
-            source: dataset,
-            sourceLayer: layer,
-            id: hoveredStateId,
-        },
-        { hover: false }
-    );
-
-    hoveredStateId = null;
+    return {
+        drawerContent: drawerContent,
+        drawerOpen: drawerOpen,
+        hoveredStateId: newHoveredStateId,
+    };
 }
