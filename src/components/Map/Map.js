@@ -2,6 +2,7 @@
 import "./Map.scss";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "!mapbox-gl";
+import ClipLoader from "react-spinners/ClipLoader";
 import ControlPanel from "../UI/ControlPanel/ControlPanel";
 import Drawer from "../UI/Drawer/Drawer";
 import { fetchVicData } from "../../data/data";
@@ -17,6 +18,7 @@ mapboxgl.accessToken = REACT_APP_MAPBOX_API_TOKEN;
 function Map() {
     const mapContainer = useRef(null);
     const map = useRef(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [summaryStatistics, setSummaryStatistics] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerContent, setDrawerContent] = useState(null);
@@ -45,6 +47,7 @@ function Map() {
         async function loadLayers() {
             const data = await fetchVicData();
             setSummaryStatistics(data.summaryStatistics);
+            setIsLoading(false);
             map.current.addSource("regionBounds", {
                 type: "vector",
                 url: "mapbox://hassdaddy3.8h1ha029",
@@ -155,6 +158,11 @@ function Map() {
                 data={summaryStatistics}
             />
             <Drawer open={drawerOpen} content={drawerContent} />
+            {isLoading && (
+                <div className="loading">
+                    <ClipLoader color="#1e90ff" size={30} /> Loading ...
+                </div>
+            )}
             <div ref={mapContainer} className="map-container" />
         </>
     );

@@ -33,7 +33,7 @@ const ControlPanel = (props) => {
                     {props.data ? (
                         props.data.lastUpdated
                     ) : (
-                        <ClipLoader size={10} color="fff" />
+                        <ClipLoader size={10} color="#1e90ff" />
                     )}
                 </span>
             </div>
@@ -78,7 +78,7 @@ const ControlPanel = (props) => {
                                     {props.data ? (
                                         props.data.totalConfirmed.toLocaleString()
                                     ) : (
-                                        <ClipLoader size={10} color="fff" />
+                                        <ClipLoader size={10} color="#1e90ff" />
                                     )}
                                 </td>
                             </tr>
@@ -88,7 +88,7 @@ const ControlPanel = (props) => {
                                     {props.data ? (
                                         props.data.totalActive.toLocaleString()
                                     ) : (
-                                        <ClipLoader size={10} color="fff" />
+                                        <ClipLoader size={10} color="#1e90ff" />
                                     )}
                                 </td>
                             </tr>
@@ -98,7 +98,7 @@ const ControlPanel = (props) => {
                                     {props.data ? (
                                         props.data.totalNew.toLocaleString()
                                     ) : (
-                                        <ClipLoader size={10} color="fff" />
+                                        <ClipLoader size={10} color="#1e90ff" />
                                     )}
                                 </td>
                             </tr>
