@@ -88,6 +88,9 @@ function Map() {
             setDrawerContent(clusterMouseEnterHandler(event, map));
             setDrawerOpen(true);
         });
+        map.current.on("mouseenter", "points", function (event) {
+            map.current.getCanvas().style.cursor = "pointer";
+        });
         map.current.on("click", function (event) {
             let results = mapClickHandler(event, hoveredStateId, map);
             console.log(results);

@@ -2,7 +2,6 @@ import moment from "moment";
 
 // 'Pops' cluster on click, and reveals underlying points
 export function clusterClickHandler(event, dataset, layer, map) {
-    event.preventDefault();
     var features = map.current.queryRenderedFeatures(event.point, {
         layers: [layer],
     });
@@ -18,7 +17,7 @@ export function clusterClickHandler(event, dataset, layer, map) {
         });
 }
 
-// Render popup for points in 'clusters' layer
+// Render drawer content for clusters (desktop only)
 export function clusterMouseEnterHandler(event, map) {
     map.current.getCanvas().style.cursor = "pointer";
 
@@ -31,25 +30,24 @@ export function clusterMouseEnterHandler(event, map) {
     );
 }
 
+// Renders drawer content for points, and highlights underlying LGA
 export function mapClickHandler(event, hoveredStateId, map) {
-    event.preventDefault();
-    const bbox = [
-        [event.point.x - 1, event.point.y - 1],
-        [event.point.x + 1, event.point.y + 1],
-    ];
+    // Initialise output variables
     let drawerContent = null;
     let newHoveredStateId = null;
     let drawerOpen = false;
 
-    // Find features intersecting the bounding box.
-    const selectedPoint = map.current.queryRenderedFeatures(bbox, {
+    // Find selected point and region
+    const selectedPoint = map.current.queryRenderedFeatures(event.point, {
         layers: ["points"],
     });
-    const selectedRegion = map.current.queryRenderedFeatures(bbox, {
+    const selectedRegion = map.current.queryRenderedFeatures(event.point, {
         layers: ["region-fills"],
     });
 
     if (selectedPoint.length > 0 && selectedRegion.length > 0) {
+        // If we've clicked on a point and a region, compute drawer content
+        // and highlight relevant region
         const confirmedCases = selectedPoint[0].properties.confirmed_cases;
         const activeCases = selectedPoint[0].properties.active_cases;
         const newCases = selectedPoint[0].properties.new_cases;
@@ -166,6 +164,7 @@ export function mapClickHandler(event, hoveredStateId, map) {
 
         drawerOpen = true;
     } else {
+        // If we've clicked outside a point or region, remove region highlights
         if (hoveredStateId) {
             map.current.setFeatureState(
                 {
