@@ -76,26 +76,42 @@ function Map() {
 
         // Interactivity
         let hoveredStateId = null;
+        let drawerContent = null;
         map.current.on("click", "clusters", function (event) {
             clusterClickHandler(event, "vic-cases", "clusters", map);
             setDrawerOpen(false);
         });
         map.current.on("mouseenter", "clusters", function (event) {
-            setDrawerContent(
-                clusterMouseEnterHandler(event, hoveredStateId, map)
+            drawerContent = clusterMouseEnterHandler(
+                event,
+                hoveredStateId,
+                map
             );
+            setDrawerContent(drawerContent);
             setDrawerOpen(true);
         });
         map.current.on("mouseenter", "points", function (event) {
             map.current.getCanvas().style.cursor = "pointer";
-            let results = mapClickHandler(event, hoveredStateId, map);
+            let results = mapClickHandler(
+                event,
+                drawerContent,
+                hoveredStateId,
+                map
+            );
             setDrawerContent(results.drawerContent);
+            drawerContent = results.drawerContent;
             setDrawerOpen(results.drawerOpen);
             hoveredStateId = results.hoveredStateId;
         });
         map.current.on("click", function (event) {
-            let results = mapClickHandler(event, hoveredStateId, map);
+            let results = mapClickHandler(
+                event,
+                drawerContent,
+                hoveredStateId,
+                map
+            );
             setDrawerContent(results.drawerContent);
+            drawerContent = results.drawerContent;
             setDrawerOpen(results.drawerOpen);
             hoveredStateId = results.hoveredStateId;
         });

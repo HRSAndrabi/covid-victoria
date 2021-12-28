@@ -40,9 +40,9 @@ export function clusterMouseEnterHandler(event, hoveredStateId, map) {
 }
 
 // Renders drawer content for points, and highlights underlying LGA
-export function mapClickHandler(event, hoveredStateId, map) {
+export function mapClickHandler(event, drawerContent, hoveredStateId, map) {
     // Initialise output variables
-    let drawerContent = null;
+    let newDrawerContent = drawerContent;
     let newHoveredStateId = null;
     let drawerOpen = false;
 
@@ -60,7 +60,7 @@ export function mapClickHandler(event, hoveredStateId, map) {
         if (event.type === "click") {
             map.current.flyTo({
                 center: selectedPoint[0].geometry.coordinates,
-                zoom: 11,
+                zoom: 12,
             });
         }
 
@@ -85,7 +85,7 @@ export function mapClickHandler(event, hoveredStateId, map) {
         // const activeCasesDensity = Math.round((activeCases * Math.PI) / area);
         // const newCasesDensity = Math.round((newCases * Math.PI) / area);
 
-        drawerContent = (
+        newDrawerContent = (
             <div className="collapsible">
                 <div className="collapsible-inner">
                     <div className="drawer__header">{lga}</div>
@@ -190,9 +190,8 @@ export function mapClickHandler(event, hoveredStateId, map) {
             );
         }
     }
-
     return {
-        drawerContent: drawerContent,
+        drawerContent: newDrawerContent,
         drawerOpen: drawerOpen,
         hoveredStateId: newHoveredStateId,
     };
