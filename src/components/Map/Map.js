@@ -18,9 +18,10 @@ function Map() {
     const mapContainer = useRef(null);
     const map = useRef(null);
     const [summaryStatistics, setSummaryStatistics] = useState({
-        totalConfirmed: 0,
-        totalActive: 0,
-        totalNew: 0,
+        totalConfirmed: "...",
+        totalActive: "...",
+        totalNew: "...",
+        lastUpdated: "...",
     });
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerContent, setDrawerContent] = useState(null);

@@ -26,6 +26,9 @@ const ControlPanel = (props) => {
                 COVID-19 in Victoria
                 <FiChevronUp />
             </div>
+            <div className="timestamp">
+                Updated: <span>{props.data.lastUpdated}</span>
+            </div>
             <ul className="pills">
                 <li
                     className={`display-variable ${
@@ -76,7 +79,7 @@ const ControlPanel = (props) => {
                             <tr>
                                 <td className="left">New cases:</td>
                                 <td className="right">
-                                    +{props.data.totalNew.toLocaleString()}
+                                    {props.data.totalNew.toLocaleString()}
                                 </td>
                             </tr>
                         </tbody>

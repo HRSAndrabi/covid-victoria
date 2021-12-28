@@ -13,7 +13,7 @@
     z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: $s2;
+    gap: $s1;
     color: #fff;
     @include breakpoint-max($md) {
         width: calc(100% - $s6);
@@ -39,6 +39,7 @@
     .pills {
         margin: 0 $s3;
         padding: 0;
+        margin-bottom: $s2;
         display: flex;
         list-style: none;
         justify-content: center;
@@ -78,6 +79,15 @@
         a {
             color: inherit;
             text-decoration: none;
+        }
+    }
+
+    .timestamp {
+        color: #789;
+        padding: 0 $s3;
+        font-size: 0.8rem;
+        span {
+            color: hsla(0, 0%, 100%, 0.7);
         }
     }
 

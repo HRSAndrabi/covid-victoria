@@ -1,4 +1,5 @@
 import template from "./template.json";
+import moment from "moment";
 
 function csvToJSON(csv) {
     var lines = csv.split("\n");
@@ -56,6 +57,10 @@ async function getSummaryStatistics(data) {
         (total, obj) => parseInt(obj.new) + total,
         0
     );
+    summary_statistics["lastUpdated"] = moment(
+        Object.values(data)[0].file_processed_date,
+        "YYYY-MM-DD"
+    ).format("dddd, DD MMM YYYY");
     // Recursive solution to getting back NaNs
     if (
         summary_statistics.totalConfirmed !== summary_statistics.totalConfirmed
