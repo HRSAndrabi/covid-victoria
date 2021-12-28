@@ -18,9 +18,18 @@ export function clusterClickHandler(event, dataset, layer, map) {
 }
 
 // Render drawer content for clusters (desktop only)
-export function clusterMouseEnterHandler(event, map) {
+export function clusterMouseEnterHandler(event, hoveredStateId, map) {
     map.current.getCanvas().style.cursor = "pointer";
-
+    if (hoveredStateId) {
+        map.current.setFeatureState(
+            {
+                source: "regionBounds",
+                sourceLayer: "VicUpdatedLGA-c07oek",
+                id: hoveredStateId,
+            },
+            { hover: false }
+        );
+    }
     return (
         <div className="collapsible small">
             <div className="collapsible-inner">
@@ -48,6 +57,13 @@ export function mapClickHandler(event, hoveredStateId, map) {
     if (selectedPoint.length > 0 && selectedRegion.length > 0) {
         // If we've clicked on a point and a region, compute drawer content
         // and highlight relevant region
+        if (event.type === "click") {
+            map.current.flyTo({
+                center: selectedPoint[0].geometry.coordinates,
+                zoom: 11,
+            });
+        }
+
         const confirmedCases = selectedPoint[0].properties.confirmed_cases;
         const activeCases = selectedPoint[0].properties.active_cases;
         const newCases = selectedPoint[0].properties.new_cases;

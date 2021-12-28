@@ -81,11 +81,17 @@ function Map() {
             setDrawerOpen(false);
         });
         map.current.on("mouseenter", "clusters", function (event) {
-            setDrawerContent(clusterMouseEnterHandler(event, map));
+            setDrawerContent(
+                clusterMouseEnterHandler(event, hoveredStateId, map)
+            );
             setDrawerOpen(true);
         });
         map.current.on("mouseenter", "points", function (event) {
             map.current.getCanvas().style.cursor = "pointer";
+            let results = mapClickHandler(event, hoveredStateId, map);
+            setDrawerContent(results.drawerContent);
+            setDrawerOpen(results.drawerOpen);
+            hoveredStateId = results.hoveredStateId;
         });
         map.current.on("click", function (event) {
             let results = mapClickHandler(event, hoveredStateId, map);
