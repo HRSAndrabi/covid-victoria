@@ -65,7 +65,6 @@ async function getSummaryStatistics(data) {
     if (
         summary_statistics.totalConfirmed !== summary_statistics.totalConfirmed
     ) {
-        console.log("err");
         const newData = await fetchVicData();
         return newData.summaryStatistics;
     }
