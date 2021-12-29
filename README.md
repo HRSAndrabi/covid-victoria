@@ -9,3 +9,7 @@ Data is sourced directly from the Department of Health [COVID-19 data portal](ht
 ## Why is it broken?
 
 This will happen everytime the Department of Health makes changes to the structure of the input datafile. You can try and fix it via a PR, or raise an issue and I will fix it as soon as I can.
+
+## Support
+
+If you want to support the project, you can donate [here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UP78SXH27MH5J&source=url).
