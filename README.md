@@ -1,4 +1,4 @@
-# CovidVictoria
+# Victoria COVID-19 Visualisation Tool
 
 An interactive visualisation of coronavirus (COVID-19) cases in Victoria. This repository replaces an older version of the tool, which ran from July 2020 to December 2021. Built and maintained by [@hrs_andrabi](https://twitter.com/hrs_andrabi). Contact me at hassan@covidvictoria.com.
 
