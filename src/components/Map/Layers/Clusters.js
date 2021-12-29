@@ -4,11 +4,7 @@ module.exports = {
     id: "clusters",
     type: "circle",
     source: "vic-cases",
-    filter: [
-        "all",
-        ["has", "point_count"],
-        [">", ["get", "confirmed_cases"], 0],
-    ],
+    filter: ["all", ["has", "point_count"], [">", ["get", "active_cases"], 0]],
     layout: { visibility: "visible" },
     paint: style["circleStyling"],
 };

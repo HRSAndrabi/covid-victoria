@@ -5,7 +5,7 @@ import { FiChevronUp } from "react-icons/fi";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const ControlPanel = (props) => {
-    const [selected, setSelected] = useState("confirmed_cases");
+    const [selected, setSelected] = useState("active_cases");
     const [collapsed, setCollapsed] = useState(false);
 
     const layerToggleHandler = (event) => {

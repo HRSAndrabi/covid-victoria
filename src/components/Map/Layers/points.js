@@ -7,7 +7,7 @@ module.exports = {
     filter: [
         "all",
         ["!", ["has", "point_count"]],
-        [">", ["get", "confirmed_cases"], 0],
+        [">", ["get", "active_cases"], 0],
     ],
     layout: { visibility: "visible" },
     paint: style["circleStyling"],

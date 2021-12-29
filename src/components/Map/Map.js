@@ -22,7 +22,7 @@ function Map() {
     const [summaryStatistics, setSummaryStatistics] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [drawerContent, setDrawerContent] = useState(null);
-    let displayVariable = "confirmed_cases";
+    let displayVariable = "active_cases";
 
     useEffect(() => {
         map.current = new mapboxgl.Map({
