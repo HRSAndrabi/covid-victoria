@@ -61,6 +61,18 @@ async function getSummaryStatistics(data) {
         Object.values(data)[0].file_processed_date,
         "YYYY-MM-DD"
     ).format("dddd, DD MMM YYYY");
+    summary_statistics["maxConfirmed"] = Math.max(
+        ...Object.values(data).map((obj) => parseInt(obj.cases)),
+        0
+    );
+    summary_statistics["maxActive"] = Math.max(
+        ...Object.values(data).map((obj) => parseInt(obj.active)),
+        0
+    );
+    summary_statistics["maxNew"] = Math.max(
+        ...Object.values(data).map((obj) => parseInt(obj.new)),
+        0
+    );
     // Recursive solution to getting back NaNs
     if (
         summary_statistics.totalConfirmed !== summary_statistics.totalConfirmed
