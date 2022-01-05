@@ -135,7 +135,6 @@ function Map() {
         // Updates the paint properties of "points" and "clusters" layers
         // so that the circles are styled based on the selected layer,
         // i.e. active, confirmed, or new cases
-        console.log(displayVariable);
         if (layerID !== "points" && layerID !== "clusters") {
             return;
         }
