@@ -74,6 +74,8 @@ function Map() {
             map.current.addLayer(require("./layers/counts"));
             map.current.addLayer(require("./layers/regionBorders"));
             map.current.addLayer(require("./layers/regionFills"));
+            updateLayer("points", "active_cases", data.summaryStatistics);
+            updateLayer("clusters", "active_cases", data.summaryStatistics);
         }
         loadLayers();
 
@@ -129,6 +131,54 @@ function Map() {
         return () => map.remove();
     }, [displayVariable]);
 
+    const updateLayer = (layerID, displayVariable, summaryStatistics) => {
+        // Updates the paint properties of "points" and "clusters" layers
+        // so that the circles are styled based on the selected layer,
+        // i.e. active, confirmed, or new cases
+        console.log(displayVariable);
+        if (layerID !== "points" && layerID !== "clusters") {
+            return;
+        }
+
+        let maxVal = 0;
+        if (displayVariable === "active_cases") {
+            maxVal = summaryStatistics.maxActive;
+        } else if (displayVariable === "confirmed_cases") {
+            maxVal = summaryStatistics.maxConfirmed;
+        } else if (displayVariable === "new_cases") {
+            maxVal = summaryStatistics.maxNew;
+        }
+
+        map.current.setPaintProperty(layerID, "circle-stroke-color", [
+            "step",
+            ["get", displayVariable],
+            "#d700ff",
+            maxVal / 50,
+            "#f20df6",
+            maxVal / 25,
+            "#ff00e0",
+            maxVal / 10,
+            "#f301b3",
+            maxVal / 5,
+            "#dd1c77",
+            maxVal / 2,
+            "#ff0074",
+            maxVal * 0.9,
+            "#ff003f",
+        ]);
+        map.current.setPaintProperty(layerID, "circle-radius", [
+            "interpolate",
+            ["linear"],
+            ["get", displayVariable],
+            0,
+            10,
+            maxVal / 50,
+            15,
+            maxVal,
+            30,
+        ]);
+    };
+
     const displayVariableChangeHandler = (newDisplayVariable) => {
         // Setting properties as opposed to state to avoid
         // re-rendering
@@ -148,6 +198,8 @@ function Map() {
             "text-field",
             `{${newDisplayVariable}}`
         );
+        updateLayer("points", newDisplayVariable, summaryStatistics);
+        updateLayer("clusters", newDisplayVariable, summaryStatistics);
         displayVariable = newDisplayVariable;
     };
 
