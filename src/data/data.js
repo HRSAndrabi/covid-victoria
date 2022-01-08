@@ -75,7 +75,9 @@ async function getSummaryStatistics(data) {
     );
     // Recursive solution to getting back NaNs
     if (
-        summary_statistics.totalConfirmed !== summary_statistics.totalConfirmed
+        !summary_statistics.totalConfirmed ||
+        !summary_statistics.totalActive ||
+        !summary_statistics.totalNew
     ) {
         const newData = await fetchVicData();
         return newData.summaryStatistics;

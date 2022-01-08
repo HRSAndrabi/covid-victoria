@@ -93,7 +93,7 @@ const ControlPanel = (props) => {
                                 </td>
                             </tr>
                             <tr>
-                                <td className="left">New cases:</td>
+                                <td className="left">New cases (PCR):</td>
                                 <td className="right">
                                     {props.data ? (
                                         props.data.totalNew.toLocaleString()
