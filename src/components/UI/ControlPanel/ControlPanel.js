@@ -106,7 +106,7 @@ const ControlPanel = (props) => {
                     </table>
                     <div className={`attribution ${collapsed ? "hidden" : ""}`}>
                         {" "}
-                        Visualized by{" "}
+                        Visualised by{" "}
                         <a
                             href="https://twitter.com/hrs_andrabi"
                             target="_blank"
