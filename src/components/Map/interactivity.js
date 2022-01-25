@@ -140,7 +140,7 @@ export function mapClickHandler(event, drawerContent, hoveredStateId, map) {
                         <a
                             target="_blank"
                             rel="noreferrer"
-                            href="https://www.coronavirus.vic.gov.au/where-get-tested-covid-19"
+                            href="https://covidtestnearme.app/"
                         >
                             {`\u{1F52C}`} Testing
                         </a>
