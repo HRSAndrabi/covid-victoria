@@ -13,12 +13,7 @@ for plotting is available
 and updated daily by the Department of Health. Sometimes the Department of Health forgets to update
 their dashboard, which causes the visualisation tool to be a out of date.
 
-## Why is it broken?
+## Oh no, it's broken
 
 This will happen everytime the Department of Health makes changes to the structure of the input
 datafile. You can try and fix it via a PR, or raise an issue and I will fix it as soon as I can.
-
-## Support
-
-If you want to support the project, you can donate
-[here](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UP78SXH27MH5J&source=url).
