@@ -69,11 +69,11 @@ function Map() {
                 },
             });
 
-            map.current.addLayer(require("./layers/clusters"));
-            map.current.addLayer(require("./layers/points"));
-            map.current.addLayer(require("./layers/counts"));
-            map.current.addLayer(require("./layers/regionBorders"));
-            map.current.addLayer(require("./layers/regionFills"));
+            map.current.addLayer(require("./Layers/clusters"));
+            map.current.addLayer(require("./Layers/points"));
+            map.current.addLayer(require("./Layers/counts"));
+            map.current.addLayer(require("./Layers/regionBorders"));
+            map.current.addLayer(require("./Layers/regionFills"));
             updateLayer("points", "active_cases", data.summaryStatistics);
             updateLayer("clusters", "active_cases", data.summaryStatistics);
         }

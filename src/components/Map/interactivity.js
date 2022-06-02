@@ -79,8 +79,12 @@ export function mapClickHandler(event, drawerContent, hoveredStateId, map) {
         const confirmedCasesRate = Math.round(
             (confirmedCases * 1000) / population
         );
-        const activeCasesRate = Math.round((activeCases * 1000) / population);
-        const newCasesRate = Math.round((newCases * 1000) / population);
+        const activeCasesRate = (
+            Math.round((activeCases * 1000 * 10) / population) / 10
+        ).toFixed(1);
+        const newCasesRate = (
+            Math.round((newCases * 1000 * 10) / population) / 10
+        ).toFixed(1);
         // const confirmedCasesDensity = Math.round((confirmedCases * Math.PI) / area);
         // const activeCasesDensity = Math.round((activeCases * Math.PI) / area);
         // const newCasesDensity = Math.round((newCases * Math.PI) / area);
