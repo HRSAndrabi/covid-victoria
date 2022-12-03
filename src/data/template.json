@@ -106,23 +106,6 @@
         {
             "type": "Feature",
             "properties": {
-                "lga": "Moreland",
-                "confirmed_cases": 0,
-                "active_cases": 0,
-                "new_cases": 0,
-                "rate": 0,
-                "population": 185767.0,
-                "last_updated": "2021-01-01",
-                "area_km2": 51.0
-            },
-            "geometry": {
-                "type": "Point",
-                "coordinates": [144.9488138808444, -37.729845421426894]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {
                 "lga": "Greater Dandenong",
                 "confirmed_cases": 0,
                 "active_cases": 0,
