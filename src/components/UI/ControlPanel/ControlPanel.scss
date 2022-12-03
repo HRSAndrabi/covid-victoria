@@ -21,6 +21,7 @@
 
     svg {
         transition: transform 0.2s ease-in-out;
+        cursor: pointer;
     }
 
     &__header {
@@ -90,7 +91,7 @@
 
     .collapsible {
         width: 100%;
-        margin-bottom: 155px;
+        margin-bottom: 165px;
         transition: all 0.2s ease-in-out;
 
         &-inner {
@@ -115,7 +116,7 @@
 
             .attribution {
                 color: #708090;
-                font-size: 0.8rem;
+                font-size: 0.7rem;
                 line-height: 1.2rem;
                 padding-top: $s2;
                 transition: all 0.2s ease-in-out;
